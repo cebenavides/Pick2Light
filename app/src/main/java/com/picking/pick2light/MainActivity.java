@@ -1,5 +1,5 @@
 /********************************************
- PICK2LIGHT APP
+ PICK2LIGHT APP hola
  ********************************************/
 
 package com.picking.pick2light;

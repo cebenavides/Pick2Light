@@ -1,3 +1,7 @@
+/********************************************
+ PICK2LIGHT APP
+ ********************************************/
+
 package com.picking.pick2light;
 
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -23,11 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar spinner;
     private boolean flag = false;
     private Socket s;
-    private DataOutputStream dos;
-
-    private static InputStreamReader inputStreamReader;
-    private static BufferedReader bufferedReader;
-    private String message = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +41,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void boton1(final View view){
-
         Thread t = new Thread(){
-
             @Override
             public void run() {
-
                 try {
                     //if (!flag) {
                         s = new Socket("192.168.0.11", 10096);
@@ -82,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         t.start();
-        //Toast.makeText(this, "The message has been sent", Toast.LENGTH_SHORT).show();
     }
 
     public void showToast(final String toast)

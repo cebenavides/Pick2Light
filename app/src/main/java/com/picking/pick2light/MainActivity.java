@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     if (received.equals("1")){
                         showToast("Autorizado");
                         System.out.println("Autorizado");
+                        
                     }else{
                         showToast("No autorizado");
                         System.out.println("No autorizado");

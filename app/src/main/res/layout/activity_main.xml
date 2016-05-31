@@ -16,10 +16,10 @@
         android:text="Pick2Light"
         android:id="@+id/animatedtext"
         android:textSize="50dp"
+        android:layout_marginTop="48dp"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp"
-        android:textColor="#ffffff" />
+        android:layout_centerHorizontal="true" />
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -28,7 +28,8 @@
         android:minHeight="100dp"
         android:minWidth="100dp"
         android:mirrorForRtl="false"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/animatedtext"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -37,10 +38,10 @@
         android:text="Esperando ingreso usuario..."
         android:id="@+id/textView"
         android:textSize="20dp"
-        android:layout_marginTop="45dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="85dp"
         android:layout_below="@+id/progressBar"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ffffff" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -51,4 +52,29 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/progressBar"
         android:layout_alignStart="@+id/progressBar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IP"
+        android:id="@+id/textView2"
+        android:editable="false"
+        android:textSize="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/entradaIP"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/animatedtext"
+        android:layout_alignEnd="@+id/animatedtext"
+        android:layout_alignLeft="@+id/animatedtext"
+        android:layout_alignStart="@+id/animatedtext"
+        android:textColor="#ffffff"
+        android:text="10.20.33.80"
+        android:textAlignment="center" />
+
 </RelativeLayout>

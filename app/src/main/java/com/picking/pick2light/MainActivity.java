@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     //if (!flag) {
-                        s = new Socket("10.20.33.80", 10096);
+                        String valueIP =((EditText)findViewById(R.id.entradaIP)).getText().toString();
+                        s = new Socket(valueIP, 10096);
+                        //"10.20.33.80"
                         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
                         flag = true;
                     //}

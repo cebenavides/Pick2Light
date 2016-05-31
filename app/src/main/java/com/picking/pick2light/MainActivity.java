@@ -4,6 +4,7 @@
 
 package com.picking.pick2light;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     //if (!flag) {
-                        s = new Socket("192.168.0.11", 10096);
+                        s = new Socket("10.20.33.80", 10096);
                         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
                         flag = true;
                     //}
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     if (received.equals("1")){
                         showToast("Autorizado");
                         System.out.println("Autorizado");
+                        Intent callData_user = new Intent(MainActivity.this,Data_user.class);
+                        startActivity(callData_user);
                         
                     }else{
                         showToast("No autorizado");

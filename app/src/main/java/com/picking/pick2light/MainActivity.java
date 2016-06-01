@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     //if (!flag) {
                         String valueIP =((EditText)findViewById(R.id.entradaIP)).getText().toString();
-                        s = new Socket(valueIP, 10096);
+                        s = new Socket(valueIP, 10097);
                         //"10.20.33.80"
                         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
                         flag = true;

@@ -10,18 +10,6 @@
     tools:context="com.picking.pick2light.Crono"
     android:background="@drawable/background">
 
-
-    <Chronometer
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:id="@+id/chronometer"
-        android:textSize="50dp"
-        android:textStyle="italic"
-        android:typeface="monospace"
-        android:textAlignment="center"
-        android:layout_above="@+id/est1"
-        android:layout_toStartOf="@+id/start" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,10 +54,8 @@
         android:text="Estación 1"
         android:id="@+id/est1"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/reset"
-        android:layout_toStartOf="@+id/reset"
-        android:layout_marginRight="30dp"
-        android:layout_marginEnd="30dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="120dp"
@@ -77,10 +63,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Estación 2"
         android:id="@+id/est2"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/reset"
-        android:layout_alignStart="@+id/reset"
-        android:layout_marginRight="10dp" />
+        android:layout_below="@+id/est1"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="120dp"
@@ -88,9 +72,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Estación 3"
         android:id="@+id/est3"
-        android:layout_below="@+id/est1"
-        android:layout_alignRight="@+id/est1"
-        android:layout_alignEnd="@+id/est1" />
+        android:layout_below="@+id/est2"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="120dp"
@@ -107,9 +90,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Estación 4"
         android:id="@+id/est4"
-        android:layout_below="@+id/est2"
-        android:layout_alignRight="@+id/est2"
-        android:layout_alignEnd="@+id/est2" />
+        android:layout_alignBaseline="@+id/est5"
+        android:layout_alignBottom="@+id/est5"
+        android:layout_toLeftOf="@+id/start"
+        android:layout_toStartOf="@+id/start" />
 
     <TextView
         android:layout_width="120dp"
@@ -139,5 +123,14 @@
         android:layout_below="@+id/start"
         android:layout_alignLeft="@+id/est7"
         android:layout_alignStart="@+id/est7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00"
+        android:id="@+id/textito"
+        android:layout_above="@+id/est1"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

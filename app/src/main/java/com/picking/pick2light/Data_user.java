@@ -14,12 +14,7 @@ public class Data_user extends AppCompatActivity {
         setContentView(R.layout.activity_data_user);
     }
     public void crono(View view){
-        Intent i= new Intent(this, Crono.class );
-        Bundle bundle = getIntent().getExtras();
-        String valueIP=bundle.getString("ip");
-        int port = bundle.getInt("port");
-        i.putExtra("ip", valueIP);
-        i.putExtra("port", port);
+        Intent i= new Intent(this, Station.class );
         startActivity(i);
     }
 }

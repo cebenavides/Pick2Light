@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#000000"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/timerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pauseButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:textSize="40sp"
+        android:textColor="#ffffff"
+        android:text="@string/timerVal" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:text="@string/startButtonLabel"
+        android:layout_marginTop="128dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/timerValue"
+        android:layout_toStartOf="@+id/timerValue" />
+
+    <Button
+        android:id="@+id/pauseButton"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:layout_alignBaseline="@+id/startButton"
+        android:layout_alignBottom="@+id/startButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:text="@string/pauseButtonLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 1"
+        android:id="@+id/est1"
+        android:layout_below="@+id/startButton"
+        android:layout_alignLeft="@+id/startButton"
+        android:layout_alignStart="@+id/startButton"
+        android:layout_marginTop="57dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 2"
+        android:id="@+id/est2"
+        android:layout_marginTop="37dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/est1"
+        android:layout_alignLeft="@+id/est1"
+        android:layout_alignStart="@+id/est1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 3"
+        android:id="@+id/est3"
+        android:layout_marginTop="37dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/est2"
+        android:layout_alignLeft="@+id/est2"
+        android:layout_alignStart="@+id/est2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 4"
+        android:id="@+id/est4"
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/est1"
+        android:layout_alignRight="@+id/pauseButton"
+        android:layout_alignEnd="@+id/pauseButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 5"
+        android:id="@+id/est5"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/est2"
+        android:layout_alignRight="@+id/est4"
+        android:layout_alignEnd="@+id/est4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estación 6"
+        android:id="@+id/est6"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/est3"
+        android:layout_alignRight="@+id/est5"
+        android:layout_alignEnd="@+id/est5" />
+
+</RelativeLayout>

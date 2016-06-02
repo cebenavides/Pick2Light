@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Data_user" />
-        <activity android:name=".crono" />
+        <activity android:name="Station"
+            android:label="Pick2Light">
+        </activity>
         <activity android:name=".Crono"></activity>
 
     </application>

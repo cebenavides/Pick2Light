@@ -39,7 +39,7 @@
         android:id="@+id/textView"
         android:textSize="20dp"
         android:textColor="#ffffff"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="56dp"
         android:layout_below="@+id/progressBar"
         android:layout_centerHorizontal="true" />
 
@@ -50,8 +50,7 @@
         android:id="@+id/button"
         android:onClick="boton1"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/progressBar"
-        android:layout_alignStart="@+id/progressBar" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,9 +59,9 @@
         android:id="@+id/textView2"
         android:editable="false"
         android:textSize="20dp"
+        android:layout_marginTop="35dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"

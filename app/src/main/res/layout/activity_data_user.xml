@@ -8,13 +8,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.picking.pick2light.Data_user"
-    android:background="#2fb3d1">
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="User"
+        android:text="Usuario"
         android:id="@+id/textView3"
         android:textSize="35dp"
         android:textColor="#ffffff"
@@ -47,7 +47,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="siguiente"
         android:id="@+id/button2"
         android:textColor="#ffffff"
         android:layout_below="@+id/imageView"

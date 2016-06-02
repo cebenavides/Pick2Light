@@ -23,8 +23,6 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
     private ProgressBar spinner;
-    private boolean flag = false;
-    private Socket s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         rText.startAnimation(a);
         rText2.startAnimation(a);
         spinner.setVisibility(View.VISIBLE);
+
+
     }
 
     public void boton1(final View view){
@@ -47,40 +47,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    //if (!flag) {
-                        String valueIP =((EditText)findViewById(R.id.entradaIP)).getText().toString();
-                        s = new Socket(valueIP, 10097);
-                        //"10.20.33.80"
-                        PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-                        flag = true;
-                    //}
-                    out.print("1");
-                    out.flush();
-
-                    BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-                    String received = in.readLine();
-                    //System.out.println("echo: " + received);
-                    if (received.equals("1")){
+                    String valueIP =((EditText)findViewById(R.id.entradaIP)).getText().toString();
+                    int port = 10099;
+                    DBConnection.getInstance().init(valueIP, port);
+                    DBConnection.getInstance().send("1");
+                    if (DBConnection.getInstance().receive().equals("1")){
                         showToast("Autorizado");
                         System.out.println("Autorizado");
+                        //DBConnection.getInstance().closeConnection();
                         Intent callData_user = new Intent(MainActivity.this,Data_user.class);
+                        callData_user.putExtra("ip", valueIP);
+                        callData_user.putExtra("port", port);
                         startActivity(callData_user);
-                        
+
                     }else{
+                        DBConnection.getInstance().closeConnection();
                         showToast("No autorizado");
                         System.out.println("No autorizado");
                     }
-                    out.close();
-                    in.close();
-                    s.close();
 
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
             }
         };
         t.start();
+
+
     }
 
     public void showToast(final String toast)
@@ -91,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, toast, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        DBConnection.getInstance().closeConnection();
+
     }
 }
 

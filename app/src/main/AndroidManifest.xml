@@ -25,6 +25,10 @@
             android:label="Pick2Light"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name="Config"
+            android:label="Pick2Light"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".Crono"></activity>
 
     </application>

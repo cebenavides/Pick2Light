@@ -10,6 +10,20 @@
     tools:context="com.picking.pick2light.MainActivity"
     android:background="@drawable/background">
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="118dp"
+        android:layout_y="95dp"
+        android:background="@drawable/settings"
+        android:onClick="settings"
+        android:text=" "
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignTop="@+id/button"
+        android:layout_toLeftOf="@+id/animatedtext"
+        android:layout_toStartOf="@+id/animatedtext" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,31 +63,8 @@
         android:text="Conectar"
         android:id="@+id/button"
         android:onClick="boton1"
+        android:background="#473167"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IP"
-        android:id="@+id/textView2"
-        android:editable="false"
-        android:textSize="20dp"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/entradaIP"
-        android:layout_below="@+id/textView2"
-        android:layout_alignRight="@+id/animatedtext"
-        android:layout_alignEnd="@+id/animatedtext"
-        android:layout_alignLeft="@+id/animatedtext"
-        android:layout_alignStart="@+id/animatedtext"
-        android:textColor="#ffffff"
-        android:text="10.20.33.90"
-        android:textAlignment="center" />
 
 </RelativeLayout>

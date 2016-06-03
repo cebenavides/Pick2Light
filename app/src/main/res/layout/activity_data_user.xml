@@ -53,7 +53,8 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
-        android:onClick="crono" />
+        android:onClick="crono"
+        android:background="#473167" />
 
 
 </RelativeLayout>

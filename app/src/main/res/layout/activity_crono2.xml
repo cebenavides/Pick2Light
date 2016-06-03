@@ -15,40 +15,30 @@
         android:layout_height="wrap_content"
         android:text="Stop"
         android:id="@+id/stop"
+        android:background="#473167"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/est7"
-        android:layout_alignEnd="@+id/est7" />
+        android:layout_toRightOf="@+id/inicio"
+        android:layout_toEndOf="@+id/inicio" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Inicio"
         android:id="@+id/inicio"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="71dp"
-        android:onClick="inicio" />
-
-    <TextView
-        android:id="@+id/timerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:textColor="#ffffff"
-        android:text="00:00:00"
-        android:layout_below="@+id/est8"
-        android:layout_alignRight="@+id/stop"
-        android:layout_alignEnd="@+id/stop"
-        android:layout_marginTop="29dp" />
+        android:onClick="inicio"
+        android:background="#473167"
+        android:layout_below="@+id/est7"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="start"
         android:id="@+id/start"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/stop"
-        android:layout_toStartOf="@+id/stop" />
+        android:background="#473167"
+        android:layout_alignTop="@+id/stop"
+        android:layout_alignRight="@+id/est1"
+        android:layout_alignEnd="@+id/est1" />
 
     <TextView
         android:layout_width="120dp"
@@ -113,19 +103,29 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Estación 7"
         android:id="@+id/est7"
-        android:layout_below="@+id/est5"
-        android:layout_alignLeft="@+id/inicio"
-        android:layout_alignStart="@+id/inicio" />
+        android:layout_below="@+id/est6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Estación:"
-        android:id="@+id/est8"
-        android:layout_below="@+id/stop"
-        android:layout_alignLeft="@+id/est7"
-        android:layout_alignStart="@+id/est7"
-        android:layout_marginTop="27dp" />
+        android:id="@+id/textView5"
+        android:layout_above="@+id/est1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textColor="#ffffff"
+        android:text="00:00:00"
+        android:layout_above="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
 
 </RelativeLayout>

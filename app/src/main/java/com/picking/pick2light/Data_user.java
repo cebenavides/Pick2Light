@@ -14,6 +14,7 @@ public class Data_user extends AppCompatActivity {
         setContentView(R.layout.activity_data_user);
     }
     public void crono(View view){
+        //DBConnection.getInstance().send("now");
         Intent i= new Intent(this, Station.class );
         startActivity(i);
     }

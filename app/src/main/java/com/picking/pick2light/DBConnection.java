@@ -57,7 +57,6 @@ public class DBConnection extends Application{
 
     public String receive(){
         try {
-            System.out.println("I'll receive something");
             String received = in.readLine();
             return received;
         }catch(Exception e){

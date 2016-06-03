@@ -30,7 +30,7 @@ public class Station extends Activity {
     long updatedTime = 0L;
     int counter = 1;
     String tiempo;
-    String msg = "";
+    String msg = "start";
     TextView[] titulo = new TextView[7];
 
     @Override
@@ -51,17 +51,38 @@ public class Station extends Activity {
             public void run() {
                 while (true) {
                     try {
-                        System.out.println("I'm not lazy, I'm doing this.");
                         msg = DBConnection.getInstance().receive();
-                        System.out.println("El mensaje es: " + msg);
+                        if (msg.equals("ended")) {
+                            //DBConnection.getInstance().send("h");
+                            finish();
+                        }
+
                         if (msg.equals("start")) {
                             startTime = SystemClock.uptimeMillis();
+                            timeInMilliseconds = 0L;
+                            timeSwapBuff = 0L;
+                            updatedTime = 0L;
                             customHandler.postDelayed(updateTimerThread, 0);
+                        }
+
+                        if(msg.equals("reset")){
+                            customHandler.removeCallbacks(updateTimerThread);
+                            updateName2(timerValue, "0:00:000");
+                            counter = 1;
+                            updateName2(titulo[0],"Estación 1");
+                            updateName2(titulo[1],"Estación 2");
+                            updateName2(titulo[2],"Estación 3");
+                            updateName2(titulo[3],"Estación 4");
+                            updateName2(titulo[4],"Estación 5");
+                            updateName2(titulo[5],"Estación 6");
+                            updateName2(titulo[6],"Estación 7");
                         }
 
                         if (msg.equals("stop")) {
                             updateName(counter, tiempo);
+                            System.out.println("El contador esta en "+counter);
                             counter++;
+                            if (counter >= 8) { counter = 1; }
                             startTime = SystemClock.uptimeMillis();
                             timeInMilliseconds = 0L;
                             timeSwapBuff = 0L;
@@ -104,9 +125,14 @@ public class Station extends Activity {
         runOnUiThread(new Runnable() {
             public void run()
             {
-                titulo[counter-1].setText(strink);
-                titulo[counter].setTextColor(Color.parseColor("#ffea00"));
-                titulo[counter-1].setTextColor(Color.parseColor("#ffffff"));
+                if (counter < 7) {
+                    titulo[counter - 1].setText(strink);
+                    titulo[counter].setTextColor(Color.parseColor("#ffea00"));
+                    titulo[counter - 1].setTextColor(Color.parseColor("#ffffff"));
+                }else if (counter == 7) {
+                    titulo[counter - 1].setText(strink);
+                    titulo[counter - 1].setTextColor(Color.parseColor("#ffffff"));
+                }
             }
         });
     }
